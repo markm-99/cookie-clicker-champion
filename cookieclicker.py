@@ -51,6 +51,7 @@ while True:
         product_price = driver.find_element(By.ID, product_price_prefix + str(i)).text.replace(",", "")
         
         # if product price is not a valid number, continue to next iteration
+        # there are commas in the product price numbers, so removed and added check for digit-only values for peace of mind
         # we only consider valid product numbers for upgrades
         if not product_price.isdigit():
             continue
